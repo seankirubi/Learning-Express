@@ -1,12 +1,8 @@
-const express = require('express')
+const express = require("express");
+const path = require("path")
 const app = express();
 
-app.get('/', (req, res) => {
-  res.send('<h1>Hello world</h1>')
-})
+//setup static folder
+app.use(express.static(path.join(__dirname, "public")));
 
-app.get('/about', (req, res) => {
-  res.send('<h1>Hello world</h1>')
-})
-
-app.listen(8000, () => console.log("Server Listening on port 8000"))
+app.listen(8000, () => console.log("Server Listening on port 8000"));
